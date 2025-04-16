@@ -1,1 +1,1 @@
-# superhero-api
+# Superhero API (Golang)
