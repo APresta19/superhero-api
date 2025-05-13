@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"github.com/go-chi/chi"
+	"superheroapi/handlers"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -16,6 +17,7 @@ func main() {
 	var router *chi.Mux = chi.NewRouter() 
 
 	//setup routes with handler function
+	handlers.Handler(router)
 	
 	fmt.Println("Starting Superhero API...")
 
@@ -24,5 +26,8 @@ func main() {
 
 	if(err != nil) {
 		log.Error(err)
+		return
 	}
+
+	fmt.Println("Server started!")
 }
